@@ -7,6 +7,10 @@ import java.time.Duration;
 import java.util.List;
 
 public class TooLongWaiting implements Restrict{
+
+    /**
+     * Переопределение метода rightFlight для фильтрации ожидания свыше 2ух часов между сегментами
+     */
     @Override
     public boolean rightFlight(Flight flight) {
         if (flight.getSegments().size() <= 1) {

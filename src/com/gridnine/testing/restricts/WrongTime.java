@@ -7,6 +7,10 @@ import java.time.LocalDateTime;
 import java.util.function.Predicate;
 
 public class WrongTime implements Restrict {
+
+    /**
+     * Переопределение метода rightFlight для фильтрации времени вылета до текущего местного времени
+     */
     @Override
     public boolean rightFlight (Flight flight) {
         Predicate<Segment> segmentPredicate=(segment)-> LocalDateTime.now().isAfter(segment.getDepartureDate());
